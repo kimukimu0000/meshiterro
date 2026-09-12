@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  # ユーザー登録（サインアップ）のためのルーティングを追加
+  resources :users, only: [:new, :create] , path_names: { new: 'sign_up' }
+  
+  resource :session
+  resources :passwords, param: :token
+    root to: "homes#top"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
