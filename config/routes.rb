@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  resources :post_images, only: [:new, :index, :show, :create,:destroy]
+resources :post_images,
+          only: [:new, :create, :index, :show, :destroy] do
+                resource :favorite, only: [:create, :destroy]
+  resources :post_comments, only: [:create, :destroy]
+          end
   # ユーザー登録（サインアップ）のためのルーティングを追加
-  resources :users, only: [:new, :create] , path_names: { new: 'sign_up' }
+  resources :users, only: [:new, :show, :create, :edit, :update] , path_names: { new: 'sign_up' }
   resource :session
   resources :passwords, param: :token
     root to: "homes#top"
