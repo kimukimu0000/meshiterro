@@ -12,6 +12,7 @@ def create
   else
     render :new, status: :unprocessable_entity
   end
+end
 
  def index
     @post_images = PostImage.page(params[:page])

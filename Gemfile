@@ -61,9 +61,10 @@ gem 'kaminari','~> 1.2.1'
 
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
+  gem 'capybara', '>= 2.15'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
 
 
 end
