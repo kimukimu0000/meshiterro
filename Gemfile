@@ -57,7 +57,7 @@ group :development do
   gem "web-console"
 end
 
-gem 'kaminari','~> 1.2.1'
+gem 'kaminari','~> 1.3.0'
 
 
 group :test do
